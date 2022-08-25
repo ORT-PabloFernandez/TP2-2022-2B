@@ -8,14 +8,64 @@ const inventors = [
   { first: "Max", last: "Planck", year: 1858 },
 ];
 
-console.log(inventors);
+function printInventors(inventors) {
+  console.log("Nombre        Apellido    Año");
+  console.log("------------------------------");
+  inventors.forEach((inventor) => {
+    console.log(
+      `${inventor.first.padEnd(12, " ")}${inventor.last.padEnd(12, " ")}${
+        inventor.year
+      } `
+    );
+  });
+}
 
-inventors.forEach(function (inventor) {
-  console.log(inventor.first + " " + inventor.last + " " + inventor.year);
-});
+printInventors(inventors);
 
-const invetoresMayores = inventors.filter(function (inventor) {
-  return inventor.year > 1800;
-});
+// Ejercicios
+// 1.- filtrar los inventores nacidos antes del 1800
+//  b) filtrar inventores cuyo nomnbre comienza con C
 
-console.log(invetoresMayores);
+printInventors(inventors.filter((inventor) => inventor.year > 1800));
+
+// Ejercicio 2: Convertir Apellido en mayusculas
+
+printInventors(
+  inventors.map((inventor) => ({
+    first: inventor.first,
+    last: inventor.last.toUpperCase(),
+    year: inventor.year,
+  }))
+);
+
+// Ejercicio 3: Combianacion de filtrado y map
+printInventors(
+  inventors
+    .filter((inventor) => inventor.year > 1800)
+    .map((inventor) => ({
+      first: inventor.first,
+      last: inventor.last.toUpperCase(),
+      year: inventor.year,
+    }))
+);
+
+// Ejercicio 4: Buscar el inventor Kepler y retornar el objeto
+console.log(inventors.find((inventor) => inventor.last == "Kepler"));
+
+// Ejercicio 5: Alguno de los inventores nacio en 1858?
+console.log(inventors.some((inventor) => inventor.year === 1858));
+
+// Ejercicio 6: Todos los invenores nacieron despues de 1500?
+console.log(inventors.every((inventor) => inventor.year > 1500));
+
+// Ejercicio 7: Ordenar los inventores por año de nacimiento
+printInventors(inventors.sort((a, b) => b.year - a.year));
+
+// Ejercicio 8: Ordenar los inventores por apellido
+
+// Ejercicio 9: Convertir el array a un formato:
+// [{
+//    name: {first: 'first name', last: 'last name'}},
+//    year: year
+// }]
+//
