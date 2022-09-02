@@ -24,3 +24,9 @@ const str = `<ul>
 // funciones que me permitar saber el total de duracion de un tipo video en segundos
 // Tip1: Lograr convertir la cadena en un array objetos
 // Tip2: Hacer un split
+
+function mifuncion(a, b) {
+  return a * b(2);
+}
+
+console.log(mifuncion(5, (x) => x * 2));
