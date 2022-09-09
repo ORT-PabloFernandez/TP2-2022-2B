@@ -6,4 +6,10 @@ import {
   deleteInventor,
 } from "./crud.js";
 
-console.log(deleteInventor(13));
+import bcrypt from "bcrypt";
+
+const password = bcrypt.hashSync("Holamundo", 8);
+
+console.log(bcrypt.compareSync("Holamundo", password));
+
+//console.log(deleteInventor(13));

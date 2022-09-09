@@ -17,5 +17,9 @@
     "url": "https://github.com/ORT-PabloFernandez/TP2-2022-2B/issues"
   },
   "homepage": "https://github.com/ORT-PabloFernandez/TP2-2022-2B#readme",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "chalk": "^5.0.1"
+  }
 }
