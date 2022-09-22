@@ -1,3 +1,4 @@
+// Funciones asinc con promesas
 // TODO: getUsers
 // TODO: getUser(id)
 // TODO: getUserByEmail(email)
